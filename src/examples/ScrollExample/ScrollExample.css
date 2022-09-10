@@ -1,0 +1,26 @@
+.scroll-example-container {
+  min-height: 100%;
+  padding-bottom: 400px;
+}
+
+.scroll-example-container h1 {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: normal;
+  padding: 24px 12px 12px 12px;
+}
+
+.scroll-example-container p {
+  font-size: 16px;
+  line-height: normal;
+  padding: 12px;
+}
+
+.scroll-example-container img {
+  width: 100%;
+}
+
+.scroll-example-svg-sign {
+  position: fixed;
+  bottom: 12px;
+}
