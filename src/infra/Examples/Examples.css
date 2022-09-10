@@ -1,0 +1,15 @@
+.examples-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+.examples-list-item {
+  font-size: 18px;
+}
+
+.examples-list-item a {
+  color: seagreen;
+  text-decoration: none;
+}

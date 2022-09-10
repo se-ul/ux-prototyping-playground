@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 
 export const Header: React.FC = () => {
@@ -6,13 +6,28 @@ export const Header: React.FC = () => {
     <nav className="header">
       <ul className="header__list">
         <li>
-          <Link to="/">내 코드</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
+            내 코드
+          </NavLink>
         </li>
         <li>
-          <Link to="/examples">예제</Link>
+          <NavLink
+            to="/examples"
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
+            예제
+          </NavLink>
         </li>
         <li>
-          <Link to="/settings">설정</Link>
+          <NavLink
+            to="/settings"
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
+            설정
+          </NavLink>
         </li>
       </ul>
     </nav>

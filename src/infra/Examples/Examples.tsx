@@ -1,5 +1,6 @@
 import { DeviceOrientationExample, ScrollExample } from "examples";
 import { Link, useParams } from "react-router-dom";
+import "./Examples.css";
 
 const examples = {
   "device-orientation": {
@@ -15,9 +16,9 @@ export const Examples: React.FC = () => {
   return id !== undefined ? (
     examples[id].component
   ) : (
-    <ul>
+    <ul className="examples-list">
       {Object.entries(examples).map(([id, example]) => (
-        <li key={id}>
+        <li className="examples-list-item" key={id}>
           <Link to={`/examples/${id}`}>{example.name}</Link>
         </li>
       ))}
