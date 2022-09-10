@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Dogsigner",
+  "name": "Dogsigner Playground",
   "icons": [
     {
       "src": "favicon.ico",

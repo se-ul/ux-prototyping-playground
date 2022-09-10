@@ -1,4 +1,4 @@
-import { App } from "components";
+import { App } from "infra";
 import ReactDOM from "react-dom/client";
 import "styles";
 
