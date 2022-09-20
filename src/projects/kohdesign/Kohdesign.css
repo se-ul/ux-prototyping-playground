@@ -1,6 +1,6 @@
 .kohdesign-container {
   min-height: 100%;
-  background-color: #c3ff2f;
+  background-color: #ffffff;
 
   display: flex;
   align-items: center;
@@ -9,18 +9,17 @@
 
 .kohdesign-dice {
   position: absolute;
-  top: 44px;
-  left: 0px;
-  background: #0064ff;
-  padding: 60px;
+  padding: 100px;
+  top: 0;
+  left: 0;
   border-radius: 36px;
   transform: scale(1) skew(-21deg, -12deg) translate(10px)
     rotate3d(1, 10, 0, 45deg);
   box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.29);
 }
 .kohdesign-text {
-  color: whitesmoke;
-  font-size: 10px;
+  color: black;
+  font-size: 40px;
   font-weight: bold;
 }
 .kohdesign-emoji-container {
@@ -31,5 +30,15 @@
   justify-content: space-evenly;
 }
 .kohdesign-emoji {
-  font-size: 40px;
+  font-size: 80px;
+}
+
+.kohdesign-background-filter {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: rgba(50, 255, 255, 0.2);
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  display: none;
 }
