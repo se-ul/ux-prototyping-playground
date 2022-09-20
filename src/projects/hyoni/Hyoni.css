@@ -8,7 +8,7 @@
 }
 
 .hyoni-dice {
-  position: absolute;
+  /* position: absolute; */
   top: 44px;
   left: 0;
   background: red;
@@ -55,5 +55,22 @@
   z-index: 1;
   backdrop-filter: hue-rotate(100deg) blur(40px);
 
-  /* display: none; */
+  display: none;
+}
+
+.hyoni-card-container {
+  position: absolute;
+  bottom: 80px;
+}
+
+.hyoni-card-container-1 {
+  z-index: 1;
+}
+
+.hyoni-card-container-2 {
+  z-index: 2;
+}
+
+.hyoni-card-container-3 {
+  z-index: 3;
 }
