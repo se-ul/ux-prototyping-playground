@@ -14,18 +14,19 @@ export const Cheolee: React.FC = () => {
   return (
     <div ref={ref} className="cheolee-container">
       <motion.div
-        className="dice"
-        animate={{
-          x: elX,
-          y: elY,
+        className="cheolee-dice"
+        initial={{
+          background:
+            "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(187,0,255,1) 100%)",
         }}
-        // whileHover={{
-        //   scale: 1.5,
-        //   skewX: 10,
-        //   background: "blue",
-        // }}
+        whileHover={{
+          background:
+            "linear-gradient(180deg, rgba(255,0,36,1) 0%, rgba(187,0,255,1) 100%)",
+        }}
         whileTap={{
           scale: 0.9,
+          background:
+            "linear-gradient(270deg, rgba(255,0,36,1) 0%, rgba(187,0,255,1) 100%)",
         }}
         transition={{
           type: "spring",
@@ -34,9 +35,9 @@ export const Cheolee: React.FC = () => {
           mass: 1,
         }}
       >
-        <div className="number">숫자 1</div>
-        <div className="emoji-container">
-          <div className="emoji">👁</div>
+        <div className="cheolee-number">숫자 1</div>
+        <div className="cheolee-emoji-container">
+          <div className="cheolee-emoji">👁</div>
         </div>
       </motion.div>
     </div>
