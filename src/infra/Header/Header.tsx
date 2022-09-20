@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
             to="/"
             className={({ isActive }) => (isActive ? "active" : undefined)}
           >
-            내 코드
+            프로젝트
           </NavLink>
         </li>
         <li>
