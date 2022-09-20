@@ -1,0 +1,46 @@
+.kangsr-container {
+  min-height: 100%;
+  background-color: rgb(50, 48, 48);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kangsr-dice {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: rgb(241, 242, 237);
+  padding: 18px;
+  border-radius: 24px;
+  transform: scale(1.3) rotate3d(1, 1, 1, 30deg);
+  box-shadow: 8px 19px 43px 1px rgba(0, 0, 0, 0.3);
+  height: 200px;
+  width: 120px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.kangsr-number {
+  color: rgb(229, 50, 50);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.kangsr-emoji {
+  font-size: 48px;
+}
+
+.kangsr-emoji-container {
+  /* background-color: aquamarine; */
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
