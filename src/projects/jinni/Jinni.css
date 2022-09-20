@@ -6,19 +6,19 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
-.jinni-dice {
-  position: absolute;
+.jinni-card {
+  /* position: absolute; */
   top: 44px;
   left: 0;
   background: #cce314;
   padding: 40px;
   border-radius: 24px;
   box-shadow: 18px 17px 18px 17px rgba(0, 0, 0, 0.3);
-  width: 240px;
-  height: 400px;
+  width: 160px;
+  height: 220px;
   display: flex;
   flex-direction: column;
 }
@@ -53,4 +53,30 @@
   backdrop-filter: hue-rotate(120deg) blur(20px);
   box-shadow: 18px 17px 18px 17px rgba(0, 0, 0, 0.3);
   display: none;
+}
+
+.jinni-card-container {
+  background-color: red;
+  position: absolute;
+  bottom: 80px;
+}
+
+.jinni-card-container-1 {
+  background-color: blue;
+  z-index: 1;
+}
+
+.jinni-card-container-2 {
+  background-color: green;
+  z-index: 2;
+}
+
+.jinni-card-container-3 {
+  background-color: yellow;
+  z-index: 3;
+}
+
+.jinni-card-container-4 {
+  background-color: pink;
+  z-index: 4;
 }
