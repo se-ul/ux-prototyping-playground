@@ -1,0 +1,35 @@
+.kohdesign-container {
+  min-height: 100%;
+  background-color: #c3ff2f;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kohdesign-dice {
+  position: absolute;
+  top: 44px;
+  left: 0px;
+  background: #0064ff;
+  padding: 60px;
+  border-radius: 36px;
+  transform: scale(1) skew(-21deg, -12deg) translate(10px)
+    rotate3d(1, 10, 0, 45deg);
+  box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.29);
+}
+.kohdesign-text {
+  color: whitesmoke;
+  font-size: 10px;
+  font-weight: bold;
+}
+.kohdesign-emoji-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.kohdesign-emoji {
+  font-size: 40px;
+}
