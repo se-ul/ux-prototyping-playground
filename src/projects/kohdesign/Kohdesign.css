@@ -1,18 +1,18 @@
 .kohdesign-container {
   min-height: 100%;
   background-color: #ffffff;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.kohdesign-dice {
-  position: absolute;
+.kohdesign-card {
   padding: 100px;
-  top: 0;
-  left: 0;
-  border-radius: 36px;
+  top: 40;
+  left: 40;
+  width: 160px;
+  height: 200px;
+  border-radius: 26px;
   transform: scale(1) skew(-21deg, -12deg) translate(10px)
     rotate3d(1, 10, 0, 45deg);
   box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.29);
@@ -41,4 +41,18 @@
   z-index: 1;
   backdrop-filter: blur(10px);
   display: none;
+}
+
+.kohdesign-card-container {
+  position: absolute;
+  bottom: 80px;
+}
+.kohdesign-card-container-1 {
+  z-index: 1;
+}
+.kohdesign-card-container-2 {
+  z-index: 2;
+}
+.kohdesign-card-container-3 {
+  z-index: 3;
 }
