@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useMouse } from "react-use";
+import { Card } from "./card";
 import "./Kohdesign.css";
 
 export const Kohdesign: React.FC = () => {
@@ -9,55 +10,47 @@ export const Kohdesign: React.FC = () => {
   const { elX, elY } = useMouse(ref);
 
   // data
+  const [selectedCard, setSelectedCard] = useState(1);
 
   // ui
   return (
     <div ref={ref} className="kohdesign-container">
       <motion.div
-        className="kohdesign-background-filter"
-        initial={{
-          clipPath: `polygon(
-          5% 50%,
-          100% 0%,
-          100% 75%,
-          100% 0%,
-          5% 50%
-        )`,
-        }}
-        whileHover={{
-          clipPath: "polygon(50% 30%, 20% 100%, 100% 50%, 100% 30%, 80% 50%)",
-        }}
-      ></motion.div>
-      <motion.div
-        className="kohdesign-dice"
-        initial={{
-          background:
-            "linear-gradient(0deg, rgba(220,255,51,1) 0%, rgba(0,238,255,1) 100%)",
-        }}
+        className="kohdesign-card-container kohdesign-card-container-1"
         animate={{
-          x: elX,
-          y: elY,
+          x: -80,
+          y: selectedCard === 0 ? -100 : 0,
+          scale: selectedCard === 0 ? 1.2 : 1,
+          rotateZ: -10,
+          zIndex: selectedCard === 0 ? 10 : undefined,
         }}
-        // whileHover={{
-        //   scale: 1.8,
-        //   skewX: 4,
-        //   skewY: 6,
-        //   background:
-        //     "linear-gradient(90deg, rgba(0,0,51,1) 0%, rgba(0,0,255,1) 100%)",
-        // }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
-          mass: 1,
-        }}
+        onClick={() => setSelectedCard(0)}
       >
-        <div className="kohdesign-text">개자이너2일차</div>
-        <div className="kohdesign-emoji-container">
-          <div className="kohdesign-emoji">🫠</div>
-          <div className="kohdesign-emoji">❤️</div>
-          <div className="kohdesign-emoji">🍏</div>
-        </div>
+        <Card></Card>
+      </motion.div>
+      <motion.div
+        className="kohdesign-card-container kohdesign-card-container-2"
+        animate={{
+          y: selectedCard === 1 ? -100 : -20,
+          scale: selectedCard === 1 ? 1.2 : 1,
+          zIndex: selectedCard === 1 ? 10 : undefined,
+        }}
+        onClick={() => setSelectedCard(1)}
+      >
+        <Card></Card>
+      </motion.div>
+      <motion.div
+        className="kohdesign-card-container kohdesign-card-container-3"
+        animate={{
+          rotateZ: 10,
+          x: 80,
+          y: selectedCard === 2 ? -100 : 0,
+          scale: selectedCard === 2 ? 1.2 : 1,
+          zIndex: selectedCard === 2 ? 10 : undefined,
+        }}
+        onClick={() => setSelectedCard(2)}
+      >
+        <Card></Card>
       </motion.div>
     </div>
   );
