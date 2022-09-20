@@ -11,7 +11,7 @@
   position: absolute;
   top: 44px;
   left: 0;
-  background: white;
+  background: red;
   padding: 20px;
   border-radius: 20px;
   transform: scale(2) translate(5px, 0px) rotate(20deg) skew(5deg, -5deg);
@@ -42,4 +42,18 @@
 
 .hyoni-emoji {
   font-size: 100px;
+}
+
+.hyoni-background-filter {
+  position: absolute;
+  /* left: 0;
+  top: 0; */
+  width: 400px;
+  height: 400px;
+  border-radius: 30px;
+  background-color: rgba(240, 248, 246, 0.29);
+  z-index: 1;
+  backdrop-filter: hue-rotate(100deg) blur(40px);
+
+  display: none;
 }

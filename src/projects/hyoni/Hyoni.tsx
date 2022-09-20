@@ -14,6 +14,19 @@ export const Hyoni: React.FC = () => {
   // ui
   return (
     <div ref={ref} className="hyoni-playground-container">
+      <motion.div
+        className="hyoni-background-filter"
+        initial={{
+          clipPath: `polygon(
+          50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%
+        )`,
+        }}
+        whileHover={{
+          clipPath: `polygon(
+          20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%
+        )`,
+        }}
+      ></motion.div>
       {/* {elX} {elY} */}
       <motion.div
         className="hyoni-dice"
@@ -26,6 +39,14 @@ export const Hyoni: React.FC = () => {
         //   skewX: 10,
         //   background: "black",
         // }}
+        initial={{
+          background:
+            "linear-gradient(90deg, rgba(179,255,172,1) 0%, rgba(184,237,238,1) 100%)",
+        }}
+        whileHover={{
+          background:
+            "linear-gradient(90deg, rgba(179,255,172,1) 0%, rgba(184,237,238,1) 100%)",
+        }}
         whileTap={{
           scale: 0.9,
         }}
