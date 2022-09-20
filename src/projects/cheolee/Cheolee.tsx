@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useMouse } from "react-use";
+import { Card } from "./Card";
 import "./Cheolee.css";
 
 export const Cheolee: React.FC = () => {
@@ -9,35 +10,48 @@ export const Cheolee: React.FC = () => {
   const { elX, elY } = useMouse(ref);
 
   // data
+  const [selectedCard, setSelectedCard] = useState(-1);
 
   // ui
   return (
     <div ref={ref} className="cheolee-container">
       <motion.div
-        className="dice"
+        className="cheolee-card-container cheolee-card-container-1"
         animate={{
-          x: elX,
-          y: elY,
+          x: -80,
+          y: selectedCard === 0 ? -300 : 0,
+          scale: selectedCard === 0 ? 1.2 : 1,
+          rotateZ: -20,
+          zIndex: selectedCard === 0 ? 10 : undefined,
         }}
-        // whileHover={{
-        //   scale: 1.5,
-        //   skewX: 10,
-        //   background: "blue",
-        // }}
-        whileTap={{
-          scale: 0.9,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 400,
-          damping: 30,
-          mass: 1,
-        }}
+        onClick={() => setSelectedCard(0)}
       >
-        <div className="number">숫자 1</div>
-        <div className="emoji-container">
-          <div className="emoji">👁</div>
-        </div>
+        <Card></Card>
+      </motion.div>
+      <motion.div
+        className="cheolee-card-container cheolee-card-container-2"
+        animate={{
+          y: selectedCard === 1 ? -300 : -20,
+          scale: selectedCard === 1 ? 1.2 : 1,
+          rotateZ: 0,
+          zIndex: selectedCard === 1 ? 10 : undefined,
+        }}
+        onClick={() => setSelectedCard(1)}
+      >
+        <Card></Card>
+      </motion.div>
+      <motion.div
+        className="cheolee-card-container cheolee-card-container-3"
+        animate={{
+          x: 80,
+          y: selectedCard === 2 ? -300 : 0,
+          scale: selectedCard === 2 ? 1.2 : 1,
+          rotateZ: 20,
+          zIndex: selectedCard === 2 ? 10 : undefined,
+        }}
+        onClick={() => setSelectedCard(2)}
+      >
+        <Card></Card>
       </motion.div>
     </div>
   );

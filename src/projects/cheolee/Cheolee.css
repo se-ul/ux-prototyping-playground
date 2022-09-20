@@ -1,4 +1,5 @@
 .cheolee-container {
+  position: relative;
   min-height: 100%;
   background-color: palegreen;
 
@@ -7,29 +8,24 @@
   justify-content: center;
 }
 
-.dice {
-  position: absolute;
-  top: 44px;
-  left: 0;
-
-  background: red;
+.cheolee-card {
   padding: 40px;
   border-radius: 16px;
   box-shadow: 18px 17px 18px 17px rgba(0, 0, 0, 0.64);
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 360px;
 
   display: flex;
   flex-direction: column;
 }
 
-.number {
+.cheolee-number {
   color: white;
   font-size: 24px;
   font-weight: bold;
 }
 
-.emoji-container {
+.cheolee-emoji-container {
   flex: 1;
 
   display: flex;
@@ -38,9 +34,26 @@
   justify-content: center;
 }
 
-.emoji {
+.cheolee-emoji {
   font-size: 60px;
   box-shadow: 18px 17px 18px 17px rgba(0, 0, 0, 0.64);
   border-radius: 50%;
   padding: 8px;
+}
+
+.cheolee-card-container {
+  position: absolute;
+  bottom: -60px;
+}
+
+.cheolee-card-container-1 {
+  z-index: 1;
+}
+
+.cheolee-card-container-2 {
+  z-index: 2;
+}
+
+.cheolee-card-container-3 {
+  z-index: 3;
 }
