@@ -1,4 +1,4 @@
-import { Cheolee } from "projects";
+import { Cheolee, Hyoni, Jihye, Jinni, Kangsr, Kohdesign } from "projects";
 import { Link, useParams } from "react-router-dom";
 
 const people = {
@@ -6,11 +6,11 @@ const people = {
     name: "병철",
     component: <Cheolee />,
   },
-  sykang: { name: "수영", component: <div></div> },
-  koh: { name: "현선", component: <div></div> },
-  jinni: { name: "지윤", component: <div></div> },
-  li4139: { name: "지혜", component: <div></div> },
-  hyoni: { name: "정현", component: <div></div> },
+  sykang: { name: "수영", component: <Kangsr /> },
+  koh: { name: "현선", component: <Kohdesign /> },
+  jinni: { name: "지윤", component: <Jinni /> },
+  li4139: { name: "지혜", component: <Jihye /> },
+  hyoni: { name: "정현", component: <Hyoni /> },
 };
 
 export const Projects: React.FC = () => {
