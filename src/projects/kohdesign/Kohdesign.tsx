@@ -26,7 +26,7 @@ export const Kohdesign: React.FC = () => {
         }}
         onClick={() => setSelectedCard(0)}
       >
-        <Card></Card>
+        <Card title="물고기" emoji="🐠"></Card>
       </motion.div>
       <motion.div
         className="kohdesign-card-container kohdesign-card-container-2"
@@ -37,7 +37,7 @@ export const Kohdesign: React.FC = () => {
         }}
         onClick={() => setSelectedCard(1)}
       >
-        <Card></Card>
+        <Card title="풍뎅이" emoji="🪲"></Card>
       </motion.div>
       <motion.div
         className="kohdesign-card-container kohdesign-card-container-3"
@@ -50,7 +50,7 @@ export const Kohdesign: React.FC = () => {
         }}
         onClick={() => setSelectedCard(2)}
       >
-        <Card></Card>
+        <Card title="나비" emoji="🦋"></Card>
       </motion.div>
     </div>
   );
