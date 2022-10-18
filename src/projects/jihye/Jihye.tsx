@@ -30,7 +30,7 @@ export const Jihye: React.FC = () => {
         }}
         onClick={() => setSelectedCard(0)}
       >
-        <Card></Card>
+        <Card title="나는이름" emoji="🥰"></Card>
       </motion.div>
       <motion.div
         className="jihye-card-container jihye-card-container-2"
@@ -41,7 +41,7 @@ export const Jihye: React.FC = () => {
         }}
         onClick={() => setSelectedCard(1)}
       >
-        <Card></Card>
+        <Card title="하이" emoji="🦋"></Card>
       </motion.div>
       <motion.div
         className="jihye-card-container jihye-card-container-3"
@@ -52,7 +52,7 @@ export const Jihye: React.FC = () => {
         }}
         onClick={() => setSelectedCard(2)}
       >
-        <Card></Card>
+        <Card title="지혜" emoji="🤔"></Card>
       </motion.div>
     </div>
   );
