@@ -1,0 +1,13 @@
+.zoomable-table {
+  position: relative;
+  width: 400px;
+  border: 1px solid black;
+}
+
+.zoomable-table__items {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  padding: 24px;
+}

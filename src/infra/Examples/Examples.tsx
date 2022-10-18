@@ -1,4 +1,8 @@
-import { DeviceOrientationExample, ScrollExample } from "examples";
+import {
+  DeviceOrientationExample,
+  ScrollExample,
+  ZoomableTableExample,
+} from "examples";
 import { Link, useParams } from "react-router-dom";
 import "./Examples.css";
 
@@ -8,6 +12,10 @@ const examples = {
     component: <DeviceOrientationExample />,
   },
   scroll: { name: "스크롤 인터랙션", component: <ScrollExample /> },
+  "zommable-table": {
+    name: "줌 가능 테이블",
+    component: <ZoomableTableExample />,
+  },
 };
 
 export const Examples: React.FC = () => {

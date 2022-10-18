@@ -56,27 +56,22 @@
 }
 
 .jinni-card-container {
-  background-color: red;
   position: absolute;
   bottom: 80px;
 }
 
 .jinni-card-container-1 {
-  background-color: blue;
   z-index: 1;
 }
 
 .jinni-card-container-2 {
-  background-color: green;
   z-index: 2;
 }
 
 .jinni-card-container-3 {
-  background-color: yellow;
   z-index: 3;
 }
 
 .jinni-card-container-4 {
-  background-color: pink;
   z-index: 4;
 }
