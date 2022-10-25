@@ -1,2 +1,2 @@
 export * from "./Kohdesign";
-export * from "./Kohdesign3D";
+export * from "./kohdesign3D";
