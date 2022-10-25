@@ -74,21 +74,6 @@ export const Card: React.FC<CardProps> = ({ title, emoji }) => {
           </defs>
         </svg>
       </div>
-      <div className="jihye-title">
-        With Messages, users can now edit or recall recently sent messages
-      </div>
-      <div className="jihye-content">
-        With Messages, users can now edit or recall recently sent messages, and
-        mark conversations as unread to revisit them later.9 iCloud Shared Photo
-        Library makes it even easier to share a collection of photos with
-        family. With Messages, users can now edit or recall recently sent
-        messages, and mark conversations as unread to revisit them later.9
-        iCloud Shared Photo Library makes it even easier to share a collection
-        of photos with family. With Messages, users can now edit or recall
-        recently sent messages, and mark conversations as unread to revisit them
-        later.9 iCloud Shared Photo Library makes it even easier to share a
-        collection of photos with family.
-      </div>
     </motion.div>
   );
 };
