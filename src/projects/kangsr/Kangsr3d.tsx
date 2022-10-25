@@ -7,6 +7,41 @@ export function Kangsr3D() {
     <Canvas
       shadows
       dpr={[1, 2]}
+      camera={{ zoom: 1, position: [0, 0, 5], fov: 300 }}
+    >
+      <ambientLight color="red" intensity={0.1} />
+      <motion.group animate={{ x: 0, y: 3, z: 5 }}>
+        <directionalLight castShadow color="blue" />
+        <mesh>
+          <sphereGeometry />
+          <meshStandardMaterial />
+        </mesh>
+      </motion.group>
+
+      <mesh castShadow>
+        <boxGeometry></boxGeometry>
+        <meshStandardMaterial color="#ffffff" metalness={0.5} />
+      </mesh>
+
+      <mesh receiveShadow position={[0, 0, -2]}>
+        <planeGeometry args={[10, 10]} />
+        <meshStandardMaterial color="#red" />
+      </mesh>
+
+      <mesh receiveShadow position={[0, 0, -2]}>
+        <coneGeometry />
+        <meshStandardMaterial />
+      </mesh>
+
+      <OrbitControls />
+    </Canvas>
+  );
+}
+
+{
+  /* <Canvas
+      shadows
+      dpr={[1, 2]}
       camera={{ zoom: 1, position: [5, 5, 5], fov: 90 }}
     >
       <ambientLight intensity={0.1} />
@@ -26,6 +61,5 @@ export function Kangsr3D() {
         <meshStandardMaterial attach="material" color="white" />
       </mesh>
       <OrbitControls />
-    </Canvas>
-  );
+    </Canvas> */
 }
