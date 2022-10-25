@@ -11,7 +11,6 @@ export const Kangsr: React.FC = () => {
   const { docX, docY, elX, elY } = useMouse(ref);
 
   const [selectedCard, setSelectedCard] = useState(-1);
-
   // ui
   return (
     <div
@@ -20,6 +19,7 @@ export const Kangsr: React.FC = () => {
       // onClick={() => setSelectedCard(-1)}
     >
       {/* {elX} {elY} */}
+
       <motion.div
         className="kangsr-card-container kangsr-card-container-1"
         animate={{

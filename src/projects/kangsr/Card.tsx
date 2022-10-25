@@ -72,7 +72,7 @@ export const Card: React.FC<CardProps> = ({ title, emoji }) => {
       }}
     >
       {" "}
-      <div className="kangsr-svg">
+      {/* <div className="kangsr-svg">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
@@ -97,7 +97,7 @@ export const Card: React.FC<CardProps> = ({ title, emoji }) => {
             </linearGradient>
           </defs>
         </svg>
-      </div>
+      </div> */}
       <div className="kangsr-number">{title}</div>
       <div className="kangsr-emoji-container">
         <div className="kangsr-emoji">{emoji}</div>
