@@ -1,47 +1,50 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
+import { useState } from "react";
+import { GhostModel } from "./GhostModel";
 
 export function Kohdesign3D() {
+  const [isHoveringGhost, setIsHoveringGhost] = useState(false);
+
   return (
     <Canvas
       shadows
       dpr={[1, 2]}
-      camera={{ zoom: 1, position: [0, 0, 5], fov: 50 }}
+      camera={{ zoom: 0.5, position: [0, 0, 30], fov: 50 }}
     >
       <ambientLight color="#ffffff" intensity={0.1} />
-      <motion.group animate={{ x: 0, y: 3, z: 5 }}>
-        <directionalLight castShadow color="#ffffff" />
+      <motion.group animate={{ x: 0, y: 10, z: 10 }}>
+        <spotLight castShadow color="#ffffff" />
         <mesh>
           <sphereGeometry />
-          <meshStandardMaterial color="#2294ff" metalness={1} />
+          <meshStandardMaterial color="#ffffff" />
         </mesh>
       </motion.group>
 
-      <mesh castShadow>
-        <boxGeometry castShadow />
-        <meshStandardMaterial color="#ffffff" metalness={1} />
-      </mesh>
-
       <mesh receiveShadow position={[0, 0, -2]}>
-        <planeGeometry args={[10, 10]} />
+        <planeGeometry args={[30, 30]} />
         <meshStandardMaterial color="#ffff00" />
       </mesh>
 
-      <mesh receiveShadow position={[2, 5, 2]}>
-        <coneGeometry args={[1, 1]} />
-        <meshStandardMaterial />
-      </mesh>
-
-      <GhostModel />
+      <motion.group
+        animate={{ scale: isHoveringGhost ? 2 : 1 }}
+        onPointerEnter={() => {
+          setIsHoveringGhost(true);
+        }}
+        onPointerLeave={() => {
+          setIsHoveringGhost(false);
+        }}
+      >
+        <GhostModel scale={0.01} position={[0, 0, 5]} />
+      </motion.group>
 
       <OrbitControls />
     </Canvas>
   );
 }
 
-{
-  /* <Canvas
+/* <Canvas
       shadows
       dpr={[1, 2]}
       camera={{ zoom: 1, position: [5, 5, 5], fov: 90 }}
@@ -64,4 +67,3 @@ export function Kohdesign3D() {
       </mesh>
       <OrbitControls />
     </Canvas> */
-}
