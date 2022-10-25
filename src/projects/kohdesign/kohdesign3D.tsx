@@ -33,6 +33,8 @@ export function Kohdesign3D() {
         <meshStandardMaterial />
       </mesh>
 
+      <GhostModel />
+
       <OrbitControls />
     </Canvas>
   );
