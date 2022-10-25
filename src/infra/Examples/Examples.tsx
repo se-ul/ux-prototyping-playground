@@ -1,6 +1,7 @@
 import {
   DeviceOrientationExample,
   ScrollExample,
+  ThreeDBasicExample,
   ThreeDExample,
   ZoomableTableExample,
 } from "examples";
@@ -17,9 +18,13 @@ const examples = {
     name: "줌 가능 테이블",
     component: <ZoomableTableExample />,
   },
-  threed: {
-    name: "3D",
+  threedSwitch: {
+    name: "3D 스위치",
     component: <ThreeDExample />,
+  },
+  threedBasic: {
+    name: "3D 기본",
+    component: <ThreeDBasicExample />,
   },
 };
 
