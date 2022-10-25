@@ -1,6 +1,7 @@
 import {
   DeviceOrientationExample,
   ScrollExample,
+  ThreeDExample,
   ZoomableTableExample,
 } from "examples";
 import { Link, useParams } from "react-router-dom";
@@ -15,6 +16,10 @@ const examples = {
   "zommable-table": {
     name: "줌 가능 테이블",
     component: <ZoomableTableExample />,
+  },
+  threed: {
+    name: "3D",
+    component: <ThreeDExample />,
   },
 };
 
