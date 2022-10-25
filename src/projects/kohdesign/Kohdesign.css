@@ -1,28 +1,37 @@
 .kohdesign-container {
   min-height: 100%;
-  background-color: #ffffff;
+  background-color: #111111;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .kohdesign-card {
-  padding: 100px;
+  position: relative;
+  padding: 40px;
   top: 40;
   left: 40;
   width: 160px;
   height: 200px;
+  overflow: scroll;
   border-radius: 26px;
-  transform: scale(1) skew(-21deg, -12deg) translate(10px)
-    rotate3d(1, 10, 0, 45deg);
+  transform: scale(1) translate(10px) rotate3d(0, 0, 0, 0deg);
   box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.29);
 }
+
+.kohdesign-content {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 .kohdesign-text {
   color: black;
-  font-size: 40px;
+  font-size: 10px;
   font-weight: bold;
 }
 .kohdesign-emoji-container {
+  font-size: 200px;
   flex: 1;
   display: flex;
   flex-direction: row;
@@ -30,7 +39,7 @@
   justify-content: space-evenly;
 }
 .kohdesign-emoji {
-  font-size: 80px;
+  font-size: 200px;
 }
 
 .kohdesign-background-filter {
@@ -55,4 +64,8 @@
 }
 .kohdesign-card-container-3 {
   z-index: 3;
+}
+.kohdesign-svg-sign {
+  width: 50%;
+  height: 50%;
 }

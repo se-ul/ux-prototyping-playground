@@ -9,14 +9,23 @@
 }
 
 .cheolee-card {
+  position: relative;
   padding: 40px;
   border-radius: 16px;
   box-shadow: 18px 17px 18px 17px rgba(0, 0, 0, 0.64);
   width: 200px;
   height: 360px;
+  overflow: scroll;
 
   display: flex;
   flex-direction: column;
+}
+
+.cheolee-content {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: lightgray;
 }
 
 .cheolee-number {
@@ -56,4 +65,9 @@
 
 .cheolee-card-container-3 {
   z-index: 3;
+}
+
+.cheolee-svg-sign {
+  position: fixed;
+  bottom: 12px;
 }
