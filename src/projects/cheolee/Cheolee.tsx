@@ -26,7 +26,7 @@ export const Cheolee: React.FC = () => {
         }}
         onClick={() => setSelectedCard(0)}
       >
-        <Card></Card>
+        <Card title="1번" emoji="👞"></Card>
       </motion.div>
       <motion.div
         className="cheolee-card-container cheolee-card-container-2"
@@ -38,7 +38,7 @@ export const Cheolee: React.FC = () => {
         }}
         onClick={() => setSelectedCard(1)}
       >
-        <Card></Card>
+        <Card title="2번" emoji="😈"></Card>
       </motion.div>
       <motion.div
         className="cheolee-card-container cheolee-card-container-3"
@@ -51,7 +51,7 @@ export const Cheolee: React.FC = () => {
         }}
         onClick={() => setSelectedCard(2)}
       >
-        <Card></Card>
+        <Card title="3번" emoji="🌱"></Card>
       </motion.div>
     </div>
   );

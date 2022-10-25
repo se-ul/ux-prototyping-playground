@@ -11,7 +11,6 @@ export const Kangsr: React.FC = () => {
   const { docX, docY, elX, elY } = useMouse(ref);
 
   const [selectedCard, setSelectedCard] = useState(-1);
-
   // ui
   return (
     <div
@@ -20,6 +19,7 @@ export const Kangsr: React.FC = () => {
       // onClick={() => setSelectedCard(-1)}
     >
       {/* {elX} {elY} */}
+
       <motion.div
         className="kangsr-card-container kangsr-card-container-1"
         animate={{
@@ -32,7 +32,7 @@ export const Kangsr: React.FC = () => {
           setSelectedCard(0);
         }}
       >
-        <Card></Card>
+        <Card title="Car" emoji="🚗"></Card>
       </motion.div>
       <motion.div
         className="kangsr-card-container kangsr-card-container-2"
@@ -42,7 +42,7 @@ export const Kangsr: React.FC = () => {
         }}
         onClick={() => setSelectedCard(1)}
       >
-        <Card></Card>
+        <Card title="Ship" emoji="🛳"></Card>
       </motion.div>
       <motion.div
         className="kangsr-card-container kangsr-card-container-3"
@@ -54,7 +54,7 @@ export const Kangsr: React.FC = () => {
         }}
         onClick={() => setSelectedCard(2)}
       >
-        <Card></Card>
+        <Card title="Rocket" emoji="🚀"></Card>
       </motion.div>
     </div>
   );
