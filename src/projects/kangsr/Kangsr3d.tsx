@@ -1,38 +1,53 @@
 import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, GroupProps } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
+import { useRef, useState } from "react";
+import { GhostModel } from "./GhostModel";
 
 export function Kangsr3D() {
+  const [isHoveringGhost, setIsHoveringGhost] = useState(false);
+  const ghostRef = useRef<GroupProps>(null);
+
   return (
     <Canvas
       shadows
       dpr={[1, 2]}
-      camera={{ zoom: 1, position: [0, 0, 5], fov: 300 }}
+      camera={{ zoom: 1, position: [0, 0, 5], fov: 10 }}
     >
-      <ambientLight color="red" intensity={0.1} />
+      <ambientLight color="white" intensity={0.02} />
+      <ambientLight color="blue" intensity={0.1} />
       <motion.group animate={{ x: 0, y: 3, z: 5 }}>
-        <directionalLight castShadow color="blue" />
+        <directionalLight castShadow color="white" />
         <mesh>
           <sphereGeometry />
           <meshStandardMaterial />
         </mesh>
       </motion.group>
 
-      <mesh castShadow>
+      {/* <mesh castShadow>
         <boxGeometry></boxGeometry>
         <meshStandardMaterial color="#ffffff" metalness={0.5} />
+      </mesh> */}
+
+      <mesh receiveShadow position={[0, 0, -20]}>
+        <planeGeometry args={[100, 100]} />
+        <meshStandardMaterial color="white" />
       </mesh>
 
-      <mesh receiveShadow position={[0, 0, -2]}>
-        <planeGeometry args={[10, 10]} />
-        <meshStandardMaterial color="#red" />
-      </mesh>
-
-      <mesh receiveShadow position={[0, 0, -2]}>
-        <coneGeometry />
-        <meshStandardMaterial />
-      </mesh>
-
+      <motion.group
+        animate={{
+          scale: isHoveringGhost ? 2 : 1,
+          rotateX: isHoveringGhost ? -Math.PI / 4 : 0,
+        }}
+        onPointerEnter={() => {
+          setIsHoveringGhost(true);
+        }}
+        onPointerLeave={() => {
+          setIsHoveringGhost(false);
+        }}
+      >
+        <GhostModel scale={0.03} position={[0, 0, 5]} />
+      </motion.group>
       <OrbitControls />
     </Canvas>
   );
