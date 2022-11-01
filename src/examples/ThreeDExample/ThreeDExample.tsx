@@ -15,7 +15,7 @@ const transition = {
 };
 
 function Switch({ isOn, setOn }) {
-  const { nodes, materials } = useGLTF("/gltfs/switch.glb");
+  const { nodes, materials }: any = useGLTF("/gltfs/switch.glb");
   const texture = useTexture("/textures/cross.jpg");
 
   const lightVariants = {

@@ -34,7 +34,7 @@ export function Jihye3D() {
       </motion.group>
 
       <mesh receiveShadow position={[0, 0, -5]}>
-        <planeGeometry args={[3000, 3000]} color="#ffffff" />
+        <planeGeometry args={[3000, 3000]} />
         <meshStandardMaterial />
       </mesh>
       <motion.group
