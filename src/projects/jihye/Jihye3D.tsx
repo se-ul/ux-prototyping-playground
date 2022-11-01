@@ -41,7 +41,7 @@ export function Jihye3D() {
         animate={{
           scale: isHoveringGhost ? 1.2 : 1,
           rotateY: isHoveringGhost ? 1 : -1,
-          moveY: isHoveringGhost ? 30 : 0,
+          y: isHoveringGhost ? 30 : 0,
         }}
         transition={{ type: "spring" }}
         onPointerEnter={() => {
