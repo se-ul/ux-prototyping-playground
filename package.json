@@ -22,7 +22,7 @@
     "typescript": "^4.8.4"
   },
   "scripts": {
-    "start": "HTTPS=true react-scripts start",
+    "start": "HTTPS=true yarn && react-scripts start",
     "build": "react-scripts build"
   },
   "eslintConfig": {
