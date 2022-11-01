@@ -2,7 +2,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 import { useState } from "react";
-import { GhostModel } from "./Ghostmodel";
+import { GhostModel } from "./Ghost-model";
 
 export function Kohdesign3D() {
   const [isHoveringGhost, setIsHoveringGhost] = useState(false);
