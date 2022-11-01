@@ -15,13 +15,13 @@ export function Scene() {
       <motion.group animate={{ x: 0, y: 0, z: 2 }}>
         <mesh>
           <sphereGeometry args={[0.3, 30]} />
-          <meshToonMaterial />
+          <meshPhongMaterial />
         </mesh>
         <directionalLight castShadow color="#ffff00" />
       </motion.group>
       <mesh castShadow>
         <boxGeometry args={[2, 2, 2]} />
-        <meshStandardMaterial metalness={0.5} color="#ff1000" />
+        <meshLambertMaterial color="#ff1000" />
       </mesh>
       <mesh receiveShadow position={[0, 0, -5]}>
         <motion.planeGeometry args={[10, 10]} />
