@@ -1,3 +1,4 @@
+import { Physics } from "@react-three/cannon";
 import { Canvas } from "@react-three/fiber";
 
 import { Scene } from "./Scene";
@@ -9,7 +10,9 @@ export function Cheolee3D() {
       dpr={[1, 2]}
       camera={{ zoom: 1, position: [0, 0, 5], fov: 90 }}
     >
-      <Scene />
+      <Physics>
+        <Scene />
+      </Physics>
     </Canvas>
   );
 }

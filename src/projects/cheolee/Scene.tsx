@@ -1,4 +1,6 @@
+import { usePlane, useSphere } from "@react-three/cannon";
 import { Environment, OrbitControls, useTexture } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 import { useState } from "react";
 import { DoubleSide, RepeatWrapping } from "three";
@@ -19,15 +21,34 @@ export function Scene() {
   texture.repeat.y = 2;
   texture.rotation = 45;
 
+  useFrame((state, delta) => {
+    if (sphereRef.current === undefined) {
+      return;
+    }
+
+    sphereRef.current.rotation.x += 0.3 * delta;
+    sphereRef.current.rotation.y += 1 * delta;
+    sphereRef.current.rotation.z += 0.03 * delta;
+  });
+
+  const [sphereRef]: any = useSphere(() => ({ mass: 1, position: [-5, 0, 1] }));
+  const [planeRef]: any = usePlane(() => ({
+    mass: 1,
+    position: [0, -50, 0],
+    rotation: [-Math.PI / 2, 0, 0],
+  }));
+
   return (
     <>
       <ambientLight color="#ffffff" intensity={0.1} />
+      <hemisphereLight color="#ff0000" groundColor="#00ff00" intensity={1} />
 
       <Environment background files="/hdrs/studio021.hdr" />
 
-      <mesh castShadow position={[-5, 0, 1]}>
+      <mesh ref={sphereRef} castShadow>
         <sphereGeometry args={[1.5, 30]} />
         <meshPhysicalMaterial
+          map={texture}
           color="#ff0000"
           metalness={0.9}
           roughness={0.05}
@@ -60,7 +81,7 @@ export function Scene() {
       </motion.group>
 
       {/* 평면 */}
-      <mesh receiveShadow position={[0, 0, -2]}>
+      <mesh ref={planeRef} receiveShadow>
         <planeGeometry args={[100, 100]} />
         <meshStandardMaterial map={texture} />
       </mesh>
