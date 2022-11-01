@@ -15,23 +15,25 @@ export function Scene() {
   return (
     <>
       <ambientLight color="#ffffff" intensity={0.1} />
-      <Environment background files="/textures/studio021.hdr" />
-      <mesh castShadow position={[0, 0, 0]}>
+      <hemisphereLight color="#ffffff" groundColor="#0000ff" intensity={0.5} />
+      <Environment background files="/hdrs/studio021.hdr" />
+      <mesh castShadow position={[0, 0, 10]}>
         <sphereGeometry args={[5, 100]} />
         <meshPhysicalMaterial
+          map={texture}
           color="#ffffff"
           metalness={0.8}
-          roughness={0.05}
+          roughness={0.5}
           envMapIntensity={0.8}
           clearcoat={1}
           transparent={true}
-          opacity={0.5}
-          reflectivity={0.2}
+          opacity={0.8}
+          reflectivity={0.8}
           ior={0.9}
         />
       </mesh>
 
-      <motion.group animate={{ x: 0, y: 10, z: 10 }}>
+      <motion.group animate={{ x: 0, y: 10, z: 30 }}>
         <spotLight castShadow color="#ffffff" />
         <mesh>
           <sphereGeometry />
@@ -53,11 +55,7 @@ export function Scene() {
           setIsHoveringGhost(false);
         }}
       >
-        <GhostModel scale={0.01} position={[0, 0, 5]} />
-        <GhostModel scale={0.01} position={[0, 0, 10]} />
-        <GhostModel scale={0.01} position={[0, 0, 15]} />
-        <GhostModel scale={0.01} position={[0, 0, 20]} />
-        <GhostModel scale={0.01} position={[0, 0, 25]} />
+        <GhostModel scale={0.02} position={[0, 0, 10]} />
       </motion.group>
 
       <OrbitControls />
