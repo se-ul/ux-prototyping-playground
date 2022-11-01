@@ -74,4 +74,4 @@ export function GhostModel(props) {
   );
 }
 
-useGLTF.preload("/ghost-10.gltf");
+useGLTF.preload("/gltfs/ghost-10.gltf");
