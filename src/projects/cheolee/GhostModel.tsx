@@ -7,7 +7,7 @@ import { useRef } from "react";
 import * as THREE from "three";
 
 export function GhostModel(props) {
-  const { nodes, materials } = useGLTF("/ghost-10.gltf");
+  const { nodes, materials }: any = useGLTF("/ghost-10.gltf");
   const ghostRef = useRef<THREE.Mesh>(null);
 
   useFrame((state, delta) => {

@@ -2,6 +2,7 @@
   "name": "ux-prototyping-playground",
   "version": "0.1.0",
   "dependencies": {
+    "@react-three/cannon": "^6.4.0",
     "@react-three/drei": "^9.40.0",
     "@react-three/fiber": "^8.9.0",
     "@types/node": "^16.11.58",

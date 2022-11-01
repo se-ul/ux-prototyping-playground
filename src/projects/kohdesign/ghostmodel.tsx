@@ -10,7 +10,7 @@ import * as THREE from "three";
 export function GhostModel(props) {
   const ghostRef = useRef<THREE.Mesh>(null);
 
-  const { nodes, materials } = useGLTF("/ghost-10.gltf");
+  const { nodes, materials }: any = useGLTF("/gltfs/ghost-10.gltf");
 
   useFrame((state, delta) => {
     if (ghostRef.current === undefined) {

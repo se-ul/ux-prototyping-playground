@@ -3,6 +3,7 @@ import {
   ScrollExample,
   ThreeDBasicExample,
   ThreeDExample,
+  ThreeDPhysicsExample,
   ZoomableTableExample,
 } from "examples";
 import { Link, useParams } from "react-router-dom";
@@ -25,6 +26,10 @@ const examples = {
   threedBasic: {
     name: "3D 기본",
     component: <ThreeDBasicExample />,
+  },
+  threedPhysics: {
+    name: "3D 물리",
+    component: <ThreeDPhysicsExample />,
   },
 };
 
