@@ -30,8 +30,9 @@ export function GhostModel(props) {
             material={materials.body}
             position={[15.85, 94.66, 0.89]}
             rotation={[-0.09, 0, 0]}
-          />
-          3
+          >
+            <meshStandardMaterial />
+          </mesh>
           <mesh
             castShadow
             receiveShadow
