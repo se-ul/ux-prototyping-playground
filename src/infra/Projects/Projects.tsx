@@ -33,11 +33,7 @@ const people = {
   hyoni: { name: "정현", component: <Hyoni /> },
   jeongbini: { name: "정빈3D", component: <Jeongbini3D /> },
   newCheolee: { name: "병철 새 거", component: <NewCheolee /> },
-<<<<<<< HEAD
-  kohNew: { name: "현선 새거", component: "" },
-=======
-  newKangsr: { name: "수영 새 거", component: <NewKangsr /> },
->>>>>>> 84d835fa5f7312672aec8a0e899cd0eb3a699e52
+  KohNew: { name: "현선 새거", component: "KohNew" },
 };
 
 export const Projects: React.FC = () => {
