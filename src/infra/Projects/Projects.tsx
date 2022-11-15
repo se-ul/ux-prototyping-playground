@@ -10,6 +10,7 @@ import {
   Kohdesign,
   Kohdesign3D,
 } from "projects";
+import { NewCheolee } from "projects/cheolee/NewCheolee";
 import { Kangsr } from "projects/kangsr/Kangsr";
 import { Link, useParams } from "react-router-dom";
 
@@ -31,6 +32,7 @@ const people = {
   li41393d: { name: "지혜3D", component: <Jihye3D /> },
   hyoni: { name: "정현", component: <Hyoni /> },
   jeongbini: { name: "정빈3D", component: <Jeongbini3D /> },
+  newCheolee: { name: "병철 새 거", component: <NewCheolee /> },
 };
 
 export const Projects: React.FC = () => {
