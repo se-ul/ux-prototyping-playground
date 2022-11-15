@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import { useMouse } from "react-use";
-import "./Cheolee.css";
 
 export const Cheolee: React.FC = () => {
   // input

@@ -1,5 +1,6 @@
 import {
   DeviceOrientationExample,
+  MetallicEffectExample,
   ScrollExample,
   ThreeDBasicExample,
   ThreeDExample,
@@ -30,6 +31,10 @@ const examples = {
   threedPhysics: {
     name: "3D 물리",
     component: <ThreeDPhysicsExample />,
+  },
+  metallic: {
+    name: "메탈릭 이펙트",
+    component: <MetallicEffectExample />,
   },
 };
 
