@@ -13,11 +13,7 @@ import {
 import { NewCheolee } from "projects/cheolee/NewCheolee";
 import { NewJihye } from "projects/jihye/NewJihye";
 import { Kangsr } from "projects/kangsr/Kangsr";
-<<<<<<< HEAD
-import { NewKangsr } from "projects/kangsr/NewKangsr";
-=======
 import { KohNew } from "projects/kohdesign/KohNew";
->>>>>>> cda7c380d08e9f88e5135e78f1cbd5fac63fbebf
 import { Link, useParams } from "react-router-dom";
 
 const people = {
@@ -39,11 +35,8 @@ const people = {
   hyoni: { name: "정현", component: <Hyoni /> },
   jeongbini: { name: "정빈3D", component: <Jeongbini3D /> },
   newCheolee: { name: "병철 새 거", component: <NewCheolee /> },
-<<<<<<< Updated upstream
   KohNew: { name: "현선 새거", component: <KohNew /> },
-=======
   newJihye: { name: "지혜 화이팅", component: <NewJihye /> },
->>>>>>> Stashed changes
 };
 
 export const Projects: React.FC = () => {
