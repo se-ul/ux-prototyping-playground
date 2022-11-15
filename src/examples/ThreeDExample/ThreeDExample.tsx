@@ -1,10 +1,8 @@
 import { meshBounds, Shadow, useGLTF, useTexture } from "@react-three/drei";
-import { Canvas, extend } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { MotionConfig } from "framer-motion";
-import { motion as motion3D, MotionCanvas } from "framer-motion-3d";
+import { motion as motion3D } from "framer-motion-3d";
 import { Suspense, useState } from "react";
-
-extend(MotionCanvas);
 
 const transition = {
   type: "spring",
@@ -15,8 +13,8 @@ const transition = {
 };
 
 function Switch({ isOn, setOn }) {
-  const { nodes, materials } = useGLTF("/switch.glb");
-  const texture = useTexture("/cross.jpg");
+  const { nodes, materials }: any = useGLTF("/gltfs/switch.glb");
+  const texture = useTexture("/textures/cross.jpg");
 
   const lightVariants = {
     on: { color: "#888" },
@@ -84,10 +82,6 @@ export function ThreeDExample() {
         dpr={[1, 2]}
         camera={{ zoom: 60, position: [-5, 5, 5], fov: 90 }}
       >
-        {/* <motion3D.perspectiveCamera
-          defaultCamerafa
-          animate={{ x: -5, y: 5, z: isOn ? 0 : 5, fov: 90 }}
-        /> */}
         <motion3D.group initial={false} animate={isOn ? "on" : "off"}>
           <ambientLight intensity={0.1} />
           <directionalLight position={[-20, 20, 20]} intensity={1} />

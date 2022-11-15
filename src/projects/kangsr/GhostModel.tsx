@@ -8,18 +8,7 @@ import { useRef } from "react";
 import THREE from "three";
 
 export function GhostModel(props) {
-  const ghostRef = useRef<THREE.Mesh>(null);
-
   const { nodes, materials } = useGLTF("/ghost-10.gltf");
-
-  useFrame((state, delta) => {
-    if (ghostRef.current === undefined) {
-      return;
-    }
-
-    ghostRef.current.rotation.y += (Math.PI / 4) * delta;
-  });
-
   return (
     <group {...props} dispose={null} ref={ghostRef}>
       <group position={[-4.35, -37.9, -323.68]} rotation={[0.1, -0.43, 0.04]}>
@@ -74,4 +63,4 @@ export function GhostModel(props) {
   );
 }
 
-useGLTF.preload("/ghost-10.gltf");
+useGLTF.preload("/gltfs/ghost-10.gltf");

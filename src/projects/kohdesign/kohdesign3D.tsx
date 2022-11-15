@@ -1,10 +1,22 @@
-import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { motion } from "framer-motion-3d";
+import { useState } from "react";
+import { Scene } from "./scene";
 
 export function Kohdesign3D() {
+  const [isHoveringGhost, setIsHoveringGhost] = useState(false);
+
   return (
     <Canvas
+      shadows
+      dpr={[1, 2]}
+      camera={{ zoom: 0.5, position: [0, 0, 30], fov: 50 }}
+    >
+      <Scene />
+    </Canvas>
+  );
+}
+
+/* <Canvas
       shadows
       dpr={[1, 2]}
       camera={{ zoom: 1, position: [5, 5, 5], fov: 90 }}
@@ -26,6 +38,4 @@ export function Kohdesign3D() {
         <meshStandardMaterial attach="material" color="white" />
       </mesh>
       <OrbitControls />
-    </Canvas>
-  );
-}
+    </Canvas> */
