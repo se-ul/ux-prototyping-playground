@@ -12,6 +12,7 @@ import {
 } from "projects";
 import { NewCheolee } from "projects/cheolee/NewCheolee";
 import { Kangsr } from "projects/kangsr/Kangsr";
+import { NewKangsr } from "projects/kangsr/NewKangsr";
 import { Link, useParams } from "react-router-dom";
 
 const people = {
