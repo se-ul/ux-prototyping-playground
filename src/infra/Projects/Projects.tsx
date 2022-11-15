@@ -6,11 +6,11 @@ import {
   Jihye,
   Jihye3D,
   Jinni,
-  Kangsr,
   Kangsr3D,
   Kohdesign,
   Kohdesign3D,
 } from "projects";
+import { Kangsr } from "projects/kangsr/Kangsr";
 import { Link, useParams } from "react-router-dom";
 
 const people = {
