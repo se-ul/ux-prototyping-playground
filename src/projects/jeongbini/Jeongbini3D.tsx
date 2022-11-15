@@ -1,8 +1,6 @@
-import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { motion } from "framer-motion-3d";
 import { useState } from "react";
-import { GhostModel } from "./GhostModel";
+import { Scene } from "./Scene";
 
 export function Jeongbini3D() {
   //input
@@ -16,56 +14,7 @@ export function Jeongbini3D() {
       dpr={[1, 2]}
       camera={{ zoom: 1, position: [0, 0, 5], fov: 90 }}
     >
-      <ambientLight color="#ffffff" intensity={0.1} />
-
-      {/*빛*/}
-      <motion.group animate={{ x: 2, y: 3, z: 5 }}>
-        <directionalLight castShadow color="#00ff00" />
-        <mesh>
-          <sphereGeometry />
-          <meshStandardMaterial />
-        </mesh>
-      </motion.group>
-
-      {/*빛*/}
-      <motion.group animate={{ x: 4, y: 8, z: 7 }}>
-        <spotLight castShadow color="#ff0000" />
-        <mesh>
-          <sphereGeometry />
-          <meshStandardMaterial />
-        </mesh>
-      </motion.group>
-
-      {/*빛*/}
-      <motion.group animate={{ x: -10, y: 8, z: 7 }}>
-        <spotLight castShadow color="#0000ff" />
-        <mesh>
-          <sphereGeometry />
-          <meshStandardMaterial />
-        </mesh>
-      </motion.group>
-
-      {/*벽*/}
-      <mesh receiveShadow position={[0, 0, -2]}>
-        <planeGeometry args={[30, 30]} />
-        <meshStandardMaterial />
-      </mesh>
-
-      <motion.group
-        animate={{
-          scale: isHoveringGhost ? 2 : 1,
-        }}
-        onPointerEnter={() => {
-          setIsHoveringGhost(true);
-        }}
-        onPointerLeave={() => {
-          setIsHoveringGhost(false);
-        }}
-      >
-        <GhostModel scale={0.01} position={[0, 0, 5]} />
-      </motion.group>
-
-      <OrbitControls />
+      <Scene />
     </Canvas>
   );
 }
