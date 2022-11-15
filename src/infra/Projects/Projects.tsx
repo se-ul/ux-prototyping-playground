@@ -11,6 +11,7 @@ import {
   Kohdesign3D,
 } from "projects";
 import { NewCheolee } from "projects/cheolee/NewCheolee";
+import { NewJihye } from "projects/jihye/NewJihye";
 import { Kangsr } from "projects/kangsr/Kangsr";
 import { KohNew } from "projects/kohdesign/KohNew";
 import { Link, useParams } from "react-router-dom";
@@ -34,7 +35,11 @@ const people = {
   hyoni: { name: "정현", component: <Hyoni /> },
   jeongbini: { name: "정빈3D", component: <Jeongbini3D /> },
   newCheolee: { name: "병철 새 거", component: <NewCheolee /> },
+<<<<<<< Updated upstream
   KohNew: { name: "현선 새거", component: <KohNew /> },
+=======
+  newJihye: { name: "지혜 화이팅", component: <NewJihye /> },
+>>>>>>> Stashed changes
 };
 
 export const Projects: React.FC = () => {
