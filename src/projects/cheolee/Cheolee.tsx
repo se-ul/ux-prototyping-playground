@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useMouse } from "react-use";
-import { Card } from "./Card";
 import "./Cheolee.css";
 
 export const Cheolee: React.FC = () => {
@@ -10,49 +9,82 @@ export const Cheolee: React.FC = () => {
   const { elX, elY } = useMouse(ref);
 
   // data
-  const [selectedCard, setSelectedCard] = useState(-1);
+  const x = (elX / 296) * 8 - 4;
+  const y = (elY / 196) * 16 - 8;
 
   // ui
   return (
-    <div ref={ref} className="cheolee-container">
-      <motion.div
-        className="cheolee-card-container cheolee-card-container-1"
-        animate={{
-          x: -80,
-          y: selectedCard === 0 ? -300 : 0,
-          scale: selectedCard === 0 ? 1.2 : 1,
-          rotateZ: -20,
-          zIndex: selectedCard === 0 ? 10 : undefined,
+    <div
+      style={{
+        background: "black",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "white",
+      }}
+    >
+      <div
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(255,0,36,1) 0%, rgba(187,0,255,1) 100%)",
+          width: 300,
+          height: 200,
+          borderRadius: 16,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          perspective: "400px",
         }}
-        onClick={() => setSelectedCard(0)}
       >
-        <Card title="1번" emoji="👞"></Card>
-      </motion.div>
-      <motion.div
-        className="cheolee-card-container cheolee-card-container-2"
-        animate={{
-          y: selectedCard === 1 ? -300 : -20,
-          scale: selectedCard === 1 ? 1.2 : 1,
-          rotateZ: 0,
-          zIndex: selectedCard === 1 ? 10 : undefined,
-        }}
-        onClick={() => setSelectedCard(1)}
-      >
-        <Card title="2번" emoji="😈"></Card>
-      </motion.div>
-      <motion.div
-        className="cheolee-card-container cheolee-card-container-3"
-        animate={{
-          x: 80,
-          y: selectedCard === 2 ? -300 : 0,
-          scale: selectedCard === 2 ? 1.2 : 1,
-          rotateZ: 20,
-          zIndex: selectedCard === 2 ? 10 : undefined,
-        }}
-        onClick={() => setSelectedCard(2)}
-      >
-        <Card title="3번" emoji="🌱"></Card>
-      </motion.div>
+        <motion.div
+          ref={ref}
+          style={{
+            width: 296,
+            height: 196,
+            background: "black",
+            borderRadius: 16,
+            display: "flex",
+            alignItems: "flex-end",
+          }}
+          animate={{
+            rotateX: -y,
+            rotateY: x,
+            perspective: "1100px",
+          }}
+        >
+          <div style={{ display: "flex", padding: 12, gap: 8 }}>
+            <div
+              style={{
+                borderRadius: "100%",
+                width: 32,
+                height: 32,
+                background: "gray",
+              }}
+            ></div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              <div
+                style={{
+                  width: 100,
+                  height: 12,
+                  borderRadius: 4,
+                  background: "gray",
+                }}
+              ></div>
+              <div
+                style={{
+                  width: 60,
+                  height: 12,
+                  borderRadius: 4,
+                  background: "gray",
+                }}
+              ></div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
