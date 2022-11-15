@@ -8,16 +8,24 @@ export function Scene() {
   const texture = useTexture("/textures/space-texture.jpeg");
   texture.wrapS = RepeatWrapping;
   texture.wrapT = RepeatWrapping;
-  texture.repeat.x = 30;
-  texture.repeat.y = 30;
+  texture.repeat.x = 10;
+  texture.repeat.y = 10;
   texture.rotation = 0;
 
   const texture2 = useTexture("/textures/planet-texture-3.jpeg");
-  texture.wrapS = RepeatWrapping;
-  texture.wrapT = RepeatWrapping;
-  texture.repeat.x = 1;
-  texture.repeat.y = 1;
-  texture.rotation = 0;
+  texture2.wrapS = RepeatWrapping;
+  texture2.wrapT = RepeatWrapping;
+  texture2.repeat.x = 1;
+  texture2.repeat.y = 1;
+  texture2.rotation = 0;
+
+  const texture3 = useTexture("/textures/planet-texture-5.jpeg");
+  texture3.wrapS = RepeatWrapping;
+  texture3.wrapT = RepeatWrapping;
+  texture3.repeat.x = 1;
+  texture3.repeat.y = 1;
+  texture3.rotation = 0;
+
   //input
   //data
   const [isHoveringGhost, setIsHoveringGhost] = useState(false);
@@ -26,11 +34,11 @@ export function Scene() {
 
   return (
     <>
-      <ambientLight color="#ffffff" intensity={0.8} />
+      {/* <ambientLight color="#ffffff" intensity={0.5} /> */}
+      {/* <hemisphereLight color="red" groundColor="blue" intensity={1} /> */}
+      <Environment background files="/hdrs/studio021.hdr" />
 
-      <Environment background preset="night" />
-
-      <motion.group animate={{ x: -10, y: 30, z: 30 }}>
+      <motion.group animate={{ x: -100, y: 300, z: 30 }}>
         <spotLight castShadow color="#006fff" intensity={1} />
         <mesh>
           {/* <sphereGeometry /> */}
@@ -53,16 +61,16 @@ export function Scene() {
         <planeGeometry args={[300, 300]} />
         <meshStandardMaterial map={texture} />
       </mesh>
-      <mesh receiveShadow position={[10, 0, 10]}>
-        <boxGeometry args={[2, 2, 2]} />
+      <mesh receiveShadow position={[0, 0, 10]}>
+        <sphereGeometry args={[3, 30]} />
         <meshPhysicalMaterial
-          color="#ff0000"
+          color="#blue"
           metalness={0.9}
           roughness={0.05}
           envMapIntensity={0.9}
-          clearcoat={1}
+          clearcoat={0}
           transparent={true}
-          opacity={0.5}
+          opacity={0.2}
           reflectivity={0.2}
           ior={0.9}
           side={DoubleSide}
@@ -72,6 +80,12 @@ export function Scene() {
         <sphereGeometry args={[3, 30]}></sphereGeometry>
         <meshStandardMaterial map={texture2} metalness={0} roughness={1} />
       </mesh>
+
+      <mesh castShadow position={[0, 0, 50]}>
+        <sphereGeometry args={[5, 30]}></sphereGeometry>
+        <meshStandardMaterial map={texture3} metalness={0} roughness={1} />
+      </mesh>
+
       <motion.group
         animate={{
           scale: isHoveringGhost ? 1.2 : 1,
