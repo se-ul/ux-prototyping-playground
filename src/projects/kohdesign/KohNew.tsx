@@ -1,3 +1,3 @@
 export const KohNew: React.FC = () => {
-  return <div></div>;
+  return <div>ㅎㅇ</div>;
 };
