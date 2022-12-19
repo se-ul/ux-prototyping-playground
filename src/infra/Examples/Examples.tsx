@@ -1,4 +1,5 @@
 import {
+  ARExample,
   DeviceOrientationExample,
   ScrollExample,
   ZoomableTableExample,
@@ -15,6 +16,10 @@ const examples = {
   "zommable-table": {
     name: "줌 가능 테이블",
     component: <ZoomableTableExample />,
+  },
+  ar: {
+    name: "AR",
+    component: <ARExample />,
   },
 };
 
