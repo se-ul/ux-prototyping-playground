@@ -1,5 +1,6 @@
 import {
   DeviceOrientationExample,
+  FaceDetectionExample,
   MetallicEffectExample,
   ScrollExample,
   ThreeDBasicExample,
@@ -35,6 +36,10 @@ const examples = {
   metallic: {
     name: "메탈릭 이펙트",
     component: <MetallicEffectExample />,
+  },
+  faceDetection: {
+    name: "얼굴 인식",
+    component: <FaceDetectionExample />,
   },
 };
 
