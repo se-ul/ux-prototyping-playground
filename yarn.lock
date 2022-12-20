@@ -2492,6 +2492,11 @@
   dependencies:
     "@use-gesture/core" "10.2.21"
 
+"@vladmandic/human@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@vladmandic/human/-/human-3.0.1.tgz#956ac3cacb9051a07f8ac103b03ccd16f05d4af5"
+  integrity sha512-d529lTdzuMyiqv8+hlxz9F2qzWEoJglZWZWYcUL70NF3TtKB4/UQCPfoU0tdc0uQzQzWJeBTz3cPmULT8F/Gkw==
+
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.11.1.tgz#2bfd767eae1a6996f432ff7e8d7fc75679c0b6a7"
