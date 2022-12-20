@@ -16,6 +16,7 @@ import { JeongbinCard } from "projects/jeongbini/JeongbinCard";
 
 import { NewJihye } from "projects/jihye/NewJihye";
 import { Kangsr } from "projects/kangsr/Kangsr";
+import { KangsrGrad } from "projects/kangsr/KangsrGrad";
 import { NewKangsr } from "projects/kangsr/NewKangsr";
 import { KohNew } from "projects/kohdesign/KohNew";
 import { Link, useParams } from "react-router-dom";
@@ -44,6 +45,7 @@ const people = {
   KohNew: { name: "현선 새거", component: <KohNew /> },
   newJihye: { name: "지혜 화이팅", component: <NewJihye /> },
   newKangsr: { name: "수영 화이팅", component: <NewKangsr /> },
+  kangsrGrad: { name: "수영 졸전", component: <KangsrGrad /> },
 };
 
 export const Projects: React.FC = () => {
