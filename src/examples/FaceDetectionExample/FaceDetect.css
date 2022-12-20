@@ -1,0 +1,8 @@
+.background-filter {
+  background-color: rgba(0, 19, 43, 0.4);
+  /* background-color: red; */
+  z-index: 1;
+  backdrop-filter: blur(30px);
+  display: none;
+  font-family: "Sf Pro Display, bold";
+}
