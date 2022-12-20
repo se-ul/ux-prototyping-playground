@@ -7,7 +7,6 @@
     "@react-three/fiber": "^8.9.0",
     "@tensorflow-models/facemesh": "^0.0.5",
     "@tensorflow/tfjs": "^4.1.0",
-    "@tensorflow/tfjs-node": "^4.1.0",
     "@types/node": "^16.11.58",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
