@@ -5,15 +5,21 @@ interface ChipProps {
   name: string;
   lighthex: string;
   darkhex: string;
+  trans: string;
 }
 
-export const Chip: React.FC<ChipProps> = ({ name, lighthex, darkhex }) => {
+export const Chip: React.FC<ChipProps> = ({
+  name,
+  lighthex,
+  darkhex,
+  trans,
+}) => {
   return (
     <motion.div
       style={{
         display: "flex",
         alignItems: "left",
-        justifyContent: "center",
+        justifyContent: "top",
         flexDirection: "column",
         gap: "6px",
         backgroundColor: "white",
@@ -31,11 +37,15 @@ export const Chip: React.FC<ChipProps> = ({ name, lighthex, darkhex }) => {
     >
       <motion.div
         style={{
-          backgroundColor: "#" + lighthex.substring(2) + "ff",
+          backgroundColor:
+            "#" + lighthex.slice(2, 8) + lighthex.substring(0, 2),
           width: "120px",
           height: "120px",
           marginBottom: "6px",
           borderRadius: "16px",
+          borderColor: "rgba(0, 0, 0, .08)",
+          borderWidth: "0.5px",
+          border: "solid",
         }}
       ></motion.div>
       <div
@@ -54,13 +64,13 @@ export const Chip: React.FC<ChipProps> = ({ name, lighthex, darkhex }) => {
         style={{
           textAlign: "left",
           fontWeight: "500",
-          fontSize: "15px",
+          fontSize: "14px",
           color: "#b0b8c1",
           marginLeft: "4px",
           marginBottom: "2px",
         }}
       >
-        #{lighthex}
+        #{lighthex.slice(2, 8)} {Math.floor(parseInt(trans, 16) * (100 / 255))}%
       </div>
     </motion.div>
   );

@@ -12,7 +12,7 @@ export const KangsrGrad: React.FC = () => {
         width: "100%",
         height: "100%",
         display: "flex",
-        alignItems: "center",
+        alignItems: "top",
         justifyContent: "center",
         gap: "20px",
         flexWrap: "wrap",
@@ -24,6 +24,7 @@ export const KangsrGrad: React.FC = () => {
           name={color[0]}
           lighthex={color[1].light}
           darkhex={color[1].dark}
+          trans={color[1].light.substring(0, 2)}
         ></Chip>
       ))}
     </div>
