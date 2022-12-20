@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useFacePredictions } from "hooks";
+import { useHuman } from "hooks/useHuman";
 import React, { useRef, useState } from "react";
 import Webcam from "react-webcam";
 import "./FaceDetect.css";
@@ -12,10 +12,10 @@ export const FaceDetectionExample: React.FC = () => {
   const webcamRef = useRef<Webcam>(null);
 
   // input
-  const predictions = useFacePredictions(webcamRef);
+  const faces = useHuman(webcamRef);
 
   // data
-  const firstFaceBox = predictions[0]?.boundingBox;
+  const firstFace = faces[0];
   const [step, setStep] = useState(0);
 
   // ui
@@ -33,20 +33,25 @@ export const FaceDetectionExample: React.FC = () => {
         style={{ position: "absolute", width: videoWidth, height: videoHeight }}
       >
         <Webcam forceScreenshotSourceSize ref={webcamRef} />
-        {firstFaceBox && (
+        {firstFace && (
           <div
             style={{
               position: "absolute",
               border: "2px solid red",
-              left: firstFaceBox.topLeft[0],
-              top: firstFaceBox.topLeft[1],
-              width: firstFaceBox.bottomRight[0] - firstFaceBox.topLeft[0],
-              height: firstFaceBox.bottomRight[1] - firstFaceBox.topLeft[1],
+              left: firstFace.box[0],
+              top: firstFace.box[1],
+              width: firstFace.box[2],
+              height: firstFace.box[3],
+              zIndex: 9999,
+              perspective: 4000,
             }}
           >
             <motion.div
-              // layout
-              transition={{ type: "tween", ease: "linear", duration: 0.1 }}
+              style={{
+                rotateX: -firstFace.rotation.angle.pitch * 50,
+                rotateY: -firstFace.rotation.angle.yaw * 50,
+                transformOrigin: "center",
+              }}
             >
               <div
                 className="background-filter"
@@ -56,7 +61,7 @@ export const FaceDetectionExample: React.FC = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   borderRadius: "30px",
-                  transform: "translate(-10%,-100%)",
+                  transform: `translate(-10%,-100%)`,
                 }}
               >
                 {step === 0 ? (
