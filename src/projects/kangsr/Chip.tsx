@@ -43,9 +43,9 @@ export const Chip: React.FC<ChipProps> = ({
           height: "120px",
           marginBottom: "6px",
           borderRadius: "16px",
-          borderColor: "rgba(0, 0, 0, 0.05)",
-          borderWidth: "0.2px",
-          border: "solid",
+          // borderColor: "rgba(0, 0, 0, 0.05)",
+          // borderWidth: "0.2px",
+          // border: "solid",
         }}
       ></motion.div>
       <div
