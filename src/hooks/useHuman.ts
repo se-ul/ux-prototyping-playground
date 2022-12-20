@@ -3,11 +3,18 @@ import { RefObject, useEffect, useRef, useState } from "react";
 import Webcam from "react-webcam";
 
 const humanConfig: Partial<Config> = {
+  backend: "webgl",
   modelBasePath: "/models",
   face: {
     enabled: true,
     detector: { rotation: true },
   },
+  filter: { enabled: false },
+  gesture: { enabled: false },
+  body: { enabled: false },
+  hand: { enabled: false },
+  object: { enabled: false },
+  segmentation: { enabled: false },
 };
 
 const human = new Human(humanConfig);

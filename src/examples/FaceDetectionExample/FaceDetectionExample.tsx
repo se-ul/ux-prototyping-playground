@@ -1,15 +1,23 @@
 import { motion } from "framer-motion";
 import { useHuman } from "hooks/useHuman";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Webcam from "react-webcam";
 import "./FaceDetect.css";
 import { Intro } from "./Intro";
 import { Keypad } from "./keypad";
-const videoWidth = "700px";
-const videoHeight = "500px";
 
 export const FaceDetectionExample: React.FC = () => {
   const webcamRef = useRef<Webcam>(null);
+
+  const [videoWidth, setVideoWidth] = useState(700);
+  const [videoHeight, setVideoHeight] = useState(500);
+
+  useEffect(() => {
+    setInterval(() => {
+      setVideoWidth(window.innerWidth);
+      setVideoHeight(window.innerHeight);
+    }, 1000);
+  }, []);
 
   // input
   const faces = useHuman(webcamRef);
